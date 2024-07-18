@@ -1,25 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import Dashboard from './components/Dashboard';
+import PostAnalytics from './components/PostAnalytics';
+import UserDetails from './components/UserDetails';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="app">
+        <Switch>
+          <Route path="/" exact component={Dashboard} />
+          <Route path="/post-analytics" component={PostAnalytics} />
+          <Route path="/user-details" component={UserDetails} />
+        </Switch>
+      </div>
+    </Router>
   );
-}
-
+};
 export default App;
